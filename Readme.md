@@ -4,9 +4,9 @@
 
 <h1 align="center">Programa de Estágio 2024</h1>
 	
-<p justify-content="center" align-items="center" display="flex">
- <img src="readme/receita-federal-logo.png" width="150" alt="Logo Receita Federal">
- <img src="readme/MFAssinatura.png" width="200" alt="Logo Ministério da Fazenda">
- <img src="readme/Labin-logo.png" width="200" alt="Logo Labin">
+<p justify-content="center" align-items="center" text-align="center" display="flex">
+ <img src="readme/receita-federal-logo.png" width="200" margin="0 10px" alt="Logo Receita Federal">
+ <img src="readme/MFAssinatura.png" width="200" margin="0 10px" alt="Logo Ministério da Fazenda">
+ <img src="readme/Labin-logo.png" width="200" margin="0 10px" alt="Logo Labin">
 </p>
 
