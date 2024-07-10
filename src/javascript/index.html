@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>    
+    </head>
+
+    <body>
+        <h1>Curso de JavaScript</h1>
+        <h3>Precedência de execução</h3>
+        <p>Quando estamos trabalhando com linguagens de programação <b>interpretadas</b>,
+        ou seja, aquelas linguagens que são processadas em tempo de execução (nesse caso, 
+        o Js é interpretado pelo browser), é muito importante ter em mente essa ideia de 
+        precedência de execução do código.
+        </p>
+        <p>É comum tentar apontar para algum recurso ou elemento HTML que ainda não exista
+        ou seja, que ainda não foi renderizado no browser. Quando isso acontece, a lógica
+        acaba quebrando!
+        </p>
+        <br>
+        <h3>Conceito de Precedência de execução</h3>
+        <p>Em geral, nós utilizamos o Js para interagir com elementos HTML. Esses elementos
+        HTML são renderizados com base numa <b>árvore de elementos</b>conhecida como <b>Document
+        Object Model ou DOM</b>. Então, todos os elementos HTML ficam disponíveis no DOM e podem
+        ser selecionados a partir da linguagem Js para sofrerem algum tipo de ação.
+        <br><br>
+        No caso, temos esses textos e o input abaixo! Adicionamos um ID ao input, então podemos 
+        navegar por essa árvore de elementos (DOM) e localizar especificamente esse elemento na página
+        para tomar alguma ação.
+        <br><br>
+        O link do arquivo externo Js foi incluído no head e o input no body.
+        Isso significa que o Js vai ser processado antes mesmo do body.
+        Se por ventura eu quiser fazer algum tipo de interação entre o meu Js e o input (com o ID),
+        nós teremos um problema, porque o Js vai ser executado antes mesmo desse elemento estar 
+        montado no DOM e consequentemente renderizado na página.
+        <br><br>
+        document.getElementById() => Vai recuperar o elemento citado dentro do objeto do documento,
+        ou seja, o DOM.
+        <br><br>
+        document.getElementById().value => O value vai pegar o valor contido dentro desse elemento.
+        <br><br>
+        Os campos de input possuem um atributo value e vamos, portanto, forçar a inclusão de um valor
+        de forma programática, ou seja, a partir do script.
+        <br><br>
+        Quando incluímos um valor, como "oi" e salvamos o arquivo Js, nada acontece, porque o arquivo
+        está sendo executado antes do input. No momento que ele executa essa instrução, que o Js 
+        interpreta essa instrução, ele não encontra o elemento pelo ID, justamente porque ele ainda não 
+        foi "criado" naquele momento.
+        <br><br>
+        Esse é um problema de precedência, cujo código é executado antes mesmo do elemento ser criado.
+        Isso gera para nós um erro, inclusive, no console do navegador: Uncaught TypeError: Cannot set
+        property 'value' of _______ null at _______.
+        <br><br>
+        Para corrigir isso, basta corrigir a precedência de execução do nosso código.
+        Ao invés de executar o nosso script antes da criação do elemento na página, podemos executar
+        depois. Isso serve tanto para script dentro do HTML quanto importados de arquivos externos.;
+        </p>
+        <input type="text" placeholder="Teste de precedência" id="nome" disabled="disabled">
+    </body>
+    <script src="./meu_script.js"></script>
+</html>
